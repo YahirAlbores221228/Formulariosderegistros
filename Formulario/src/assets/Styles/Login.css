@@ -1,0 +1,48 @@
+.Login{
+background-color: #F0F8FF;
+width: 90%;
+max-width: 400px;
+margin: 0 auto;
+padding: 4.5em 2em;
+border-radius: 10px;
+box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+.For_titulo
+{
+font-size: 2rem;
+margin-bottom: 15px;
+}
+.Container{
+display: flex;
+flex-direction: column;
+}
+.Form-input{
+width: 100%;
+background: none;
+font-size: 1rem;
+padding: .9em;
+border: none;
+margin-bottom: 5px;
+color: #706c6c;
+}
+.Form-submit{
+background:#008CBA;
+color: white;
+font-size: 1rem;
+padding: .9em 0;
+border: none;
+border-radius: .5em;
+cursor: pointer;
+width: 100%;
+margin-bottom: 10px;
+}
+.Form-submit:hover{
+background-color:yellowgreen;
+}
+.Logo{
+width: 30%;
+border-radius: 50%;
+margin-bottom: 2em;
+}
