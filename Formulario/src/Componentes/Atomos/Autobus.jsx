@@ -54,10 +54,7 @@ fetch(URI,options)
 <div className='grupo'>
 <select name='tipo'  className='Container-input'  >
 <option value="" >Seleccione una opcion</option>
-<option value="Turimosp`+
-çm,bnv mxzglñ´ç
-
-54321789¡21  ">Turismo</option>
+<option value="Turismo">Turismo</option>
 <option value="Lujo">Lujo</option>
 </select>
 <label className='Container-label' >Tipo</label>
