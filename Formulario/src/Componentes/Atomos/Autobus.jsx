@@ -1,15 +1,32 @@
 import '../../assets/Styles/Autobuses.css'
-import {useNavigate } from "react-router-dom";
-
+import { useRef } from "react";
 function Autobus() {
-const navigate = useNavigate()
-    const handlerClick=(e)=>{
-        e.preventDefault();
-       navigate("/Login")
-    }
-    return (  
+const formDataF = useRef();
+const handlerClick=(e)=>{
+e.preventDefault();
+const formData = new FormData (formDataF.current)
+const URI ="http://34.225.239.102/api/autobus/register"
+let options ={
+method: 'POST',
+headers:{"Content-Type":'application/json'},
+body:JSON.stringify({
+"clave": formData.get('clave') ,
+  "placa": formData.get('placa'),
+  "numasientos":formData.get('numasientos') ,
+  "fecha":formData.get('fecha') ,
+  "tipo": formData.get('tipo'),
+  "nombre": formData.get('nombre'),
+  "licencia": formData.get('licencia')
+})
+}
+fetch(URI,options)
+.then(Response=>Response.json())
+.then(data=>{alert(JSON.stringify(data))})
+      
+    };
 
-<form className='Container-form' >
+    return (  
+<form className='Container-form' ref={formDataF} >
 <img alt="" className='Logo2'/>
 <h2 className='Titulo'>ALTA DE AUTOBUS</h2>
 <div className='Container'>
@@ -35,10 +52,13 @@ const navigate = useNavigate()
 </div>
 
 <div className='grupo'>
-<select name='tipo' id="" className='Container-input'  >
+<select name='tipo'  className='Container-input'  >
 <option value="" >Seleccione una opcion</option>
-<option value="">1. Turismo</option>
-<option value="">2. Lujo</option>
+<option value="Turimosp`+
+çm,bnv mxzglñ´ç
+
+54321789¡21  ">Turismo</option>
+<option value="Lujo">Lujo</option>
 </select>
 <label className='Container-label' >Tipo</label>
 </div>
@@ -46,6 +66,11 @@ const navigate = useNavigate()
 <input type="text" className='Container-input' name='nombre' placeholder=' ' />
 <label className='Container-label'>Nombre del chofer</label>
 </div>
+<div className='grupo'>
+<input type="numero" className='Container-input' name='licencia' placeholder=' ' />
+<label className='Container-label'>Licencia</label>
+</div>
+
 <input onClick={handlerClick} type="submit" value="Dar de alta" className='Input-submit'/>
 </div>
 </form>
