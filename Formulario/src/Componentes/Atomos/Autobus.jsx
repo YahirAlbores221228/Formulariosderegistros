@@ -1,5 +1,8 @@
 import '../../assets/Styles/Autobuses.css'
+import Logo from "../../assets/Img/autoplus.svg"
+import { useState } from "react";
 import { useRef } from "react";
+
 function Autobus() {
 const formDataF = useRef();
 const handlerClick=(e)=>{
@@ -22,12 +25,20 @@ body:JSON.stringify({
 fetch(URI,options)
 .then(Response=>Response.json())
 .then(data=>{alert(JSON.stringify(data))})
-      
     };
 
-    return (  
+
+const [numero, setNumero]= useState();
+const licencia =(e)=>{
+e.preventDefault();
+const lincense = Math.floor(Math.random()*100000);
+setNumero (lincense);
+}
+
+
+return (  
 <form className='Container-form' ref={formDataF} >
-<img alt="" className='Logo2'/>
+<img src={Logo} className='Logo2'/>
 <h2 className='Titulo'>ALTA DE AUTOBUS</h2>
 <div className='Container'>
 
@@ -37,12 +48,12 @@ fetch(URI,options)
 </div>
 
 <div className='grupo'>
-<input type="numero" className='Container-input'name='placa' placeholder=' ' />
+<input type="text" className='Container-input'name='placa' placeholder=' ' />
 <label className='Container-label' >Placa Autobus</label>
 </div>
 
 <div className='grupo'>
-<input type="text" className='Container-input' name='numasientos' placeholder=' ' />
+<input type="number" className='Container-input' name='numasientos' placeholder=' ' />
 <label className='Container-label' >Numero de asientos</label>
 </div>
 
@@ -64,11 +75,11 @@ fetch(URI,options)
 <label className='Container-label'>Nombre del chofer</label>
 </div>
 <div className='grupo'>
-<input type="numero" className='Container-input' name='licencia' placeholder=' ' />
+<input type="number" className='Container-input' value={numero}  name='licencia' placeholder=' ' />
 <label className='Container-label'>Licencia</label>
 </div>
-
-<input onClick={handlerClick} type="submit" value="Dar de alta" className='Input-submit'/>
+<button onClick={licencia}   type="submit" value="gnerar" className='Input-submit'>Generar licencia</button>
+<button onClick={handlerClick} type="submit" value="Dar de alta" className='Input-submit'>Dar de alta</button>
 </div>
 </form>
 
