@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRef } from "react";
 
 function Autobus() {
+
 const formDataF = useRef();
 const handlerClick=(e)=>{
 e.preventDefault();
@@ -26,15 +27,12 @@ fetch(URI,options)
 .then(Response=>Response.json())
 .then(data=>{alert(JSON.stringify(data))})
     };
-
-
 const [lincense, setNumero]= useState();
 const licencia =(e)=>{
 e.preventDefault();
 const lincense = Math.floor(Math.random()*100000);
 setNumero (lincense);
 }
-
 
 return (  
 <form className='Container-form' ref={formDataF} >
@@ -46,22 +44,22 @@ return (
 <div className='Container-dos'>
 <div className='grupo'>
 <label>Clave Autobus</label>
-<input type="text" className='Container-input' name='clave' placeholder=' '/>
+<input type="text" className='Container-input' name='clave'/>
 </div>
 <div className='grupo'>
 <label>Placa Autobus</label>
-<input type="text" className='Container-input'name='placa' placeholder=' ' />
+<input type="text" className='Container-input'name='placa'/>
 </div>
 </div>
 
 <div className='Container-tres'>
 <div className='grupo'>
 <label>Numero de asientos</label>
-<input type="number" className='Container-input' name='numasientos' placeholder=' ' />
+<input type="number" className='Container-input' name='numasientos'/>
 </div>
 <div className='grupo'>
 <label>Fecha de alta</label>
-<input type="date" className='Container-input' name='fecha' placeholder=' ' />
+<input type="date" className='Container-input' name='fecha'/>
 </div>
 </div>
 
@@ -76,11 +74,11 @@ return (
 
 <div className='grupo'>
 <label>Nombre del chofer</label>
-<input type="text" className='Container-input' name='nombre' placeholder=' ' />
+<input type="text" className='Container-input' name='nombre' />
 </div>
 <div className='grupo'>
 <label >Licencia</label>
-<input type="number" className='Container-input' value={lincense}  name='licencia' placeholder=' ' />
+<input type="number" className='Container-input' value={lincense}  name='licencia'/>
 </div>
 
 <button onClick={licencia}   type="submit"  className='Input-submit'>Generar licencia</button>
