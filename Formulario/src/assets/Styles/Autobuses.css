@@ -3,67 +3,54 @@ display: flex;
 flex-direction: column;
 gap: 23px;
 }
+.Container-dos{
+display: flex;
+gap: 23px;
+justify-content: center;
+}
+.Container-tres{
+display: flex;
+justify-content: center;
+gap: 23px;
+}
 .Titulo{
-color: #ffffff;
+color: #686868;
 font-size: 30px;
 margin-bottom: 23px;
 }
 .Logo2{
-width: 30%;
+width: 40%;
 border-radius: 50%;
 margin-bottom: 3em;
 }
 .Container-form{
-background-color: #969696e9;
-width:50%;
-min-width: 400PX;
+background-color: #ffffffe9;
+width:30%;
+min-width: 400px;
 margin: 0 auto;
 padding: 3.5em 3em;
 box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
 text-align: center;
-}
-.Container-label{
-color: var(--color);
-cursor: pointer;
-position:absolute;
-top: 0;
-left: 5px;
-transform: translateY(10px);
-transition: transform .5, color .3s;
+font-size: 16px;
+color: blue;
+font-family:'Times New Roman', Times, serif;
 }
 .Container-input{
 width: 100%;
 background: none;
-
 font-size: 1rem;
 padding: .6em .3em;
 border: none;
-color: #000000;
+color: #8f8f8f;
 outline: none;
 border-bottom: 1px solid var(--color);
-margin-bottom: 12px;
+text-align: center;
 }
 .grupo{
-position:relative;
---color: #0000007e;
-}
-.Container-input:focus + .Container-label,
-.Container-input:not(:placeholder-shown) + .Container-label
-{
-transform: translateY(-12px) scale(.7);
-transform-origin: left top;
-color: #071bfc ;
-font-size: 23px;
-}
-.Container-input:focus ~ .Container-line,
-.Container-input:not(:placeholder-shown) ~ .Container-line{
-transform: scale(1);
-}
-.Container-input:not(:placeholder-shown) {
-color: #000000;
+--color: #eea005b6;
 }
 .Input-submit{
-background:#008CBA;
+background:#00bfff;
 color: white;
 width: 100%;
 font-size: 1rem;
@@ -73,7 +60,7 @@ border-radius: .5em;
 cursor: pointer;
 }
 .Input-submit:hover{
-background-color:yellowgreen;
+background-color:rgb(21, 255, 0);
 color: #000000;
 }
 
