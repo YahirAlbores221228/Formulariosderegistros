@@ -28,7 +28,7 @@ fetch(URI,options)
     };
 
 
-const [numero, setNumero]= useState();
+const [lincense, setNumero]= useState();
 const licencia =(e)=>{
 e.preventDefault();
 const lincense = Math.floor(Math.random()*100000);
@@ -65,10 +65,6 @@ return (
 </div>
 </div>
 
-
-
-
-
 <div className='grupo'>
 <label>Tipo</label>
 <select name='tipo'  className='Container-input'  >
@@ -84,9 +80,8 @@ return (
 </div>
 <div className='grupo'>
 <label >Licencia</label>
-<input type="number" className='Container-input' value={numero}  name='licencia' placeholder=' ' />
+<input type="number" className='Container-input' value={lincense}  name='licencia' placeholder=' ' />
 </div>
-
 
 <button onClick={licencia}   type="submit"  className='Input-submit'>Generar licencia</button>
 <button onClick={handlerClick} type="submit"  className='Input-submit'>Dar de alta</button>

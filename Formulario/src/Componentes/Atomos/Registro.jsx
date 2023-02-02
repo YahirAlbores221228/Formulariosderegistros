@@ -1,16 +1,16 @@
 import '../../assets/Styles/Registro.css'
+import Logo from "../../assets/Img/autoplus.svg"
 function Registro() {
     return ( 
+
 <form className='Form'>
+<img src={Logo} className='Logo'/>
 <h2 className='Form_title'>Bienvenido registrate</h2>
+
 <div className='Form_container'>
 <div className='Form_group'>
 <input type="text" id='name' className='form_input' placeholder=' ' />
 <label for="name" className='form_label'>Nombre</label>
-</div>
-<div className='Form_group'>
-<input type="text" id='apellidos' className='form_input' placeholder=' ' />
-<label for="apellidos" className='form_label'>Apellidos</label>
 </div>
 <div className='Form_group'>
 <input type="text" id='user' className='form_input' placeholder=' ' />
@@ -25,7 +25,7 @@ function Registro() {
 <input type="password" id='Password' className='form_input' placeholder=' ' />
 <label for="Password" className='form_label'>Contraseña</label>
 </div>
-<input type="submit" className='form_submit'value="Registrar" />
+<button  type="submit" className='form_submit'>Registro</button>
 </div>
 </form>
 
